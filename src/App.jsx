@@ -96,7 +96,7 @@ export default function FermeIcosium() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-stone-50 via-white to-green-50">
+    <div className="min-h-screen bg-gradient-to-br from-stone-50 via-white to-green-50 overflow-x-hidden">
       {/* WhatsApp Floating Button */}
       <button
         onClick={openWhatsApp}
@@ -110,28 +110,28 @@ export default function FermeIcosium() {
       </button>
 
       {/* Header */}
-      <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-md z-40 border-b-2 border-amber-600">
+      <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-md z-40 border-b-2 border-amber-600 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
-            <div className="flex items-center gap-3 cursor-pointer" onClick={() => scrollTo('accueil')}>
-              <div className="text-5xl">🐴</div>
-              <div>
-                <h1 className="text-xl font-bold text-stone-800">Ferme & Club Équestre Icosium</h1>
-                <p className="text-xs text-stone-600">المزرعة التربوية ونادي الفروسية إيكوزيوم</p>
+            <div className="flex items-center gap-2 sm:gap-3 cursor-pointer flex-shrink min-w-0" onClick={() => scrollTo('accueil')}>
+              <div className="text-3xl sm:text-5xl flex-shrink-0">🐴</div>
+              <div className="min-w-0">
+                <h1 className="text-sm sm:text-lg lg:text-xl font-bold text-stone-800 truncate">Ferme & Club Équestre Icosium</h1>
+                <p className="text-xs text-stone-600 hidden sm:block">المزرعة التربوية ونادي الفروسية إيكوزيوم</p>
               </div>
             </div>
 
-            <div className="hidden md:flex items-center gap-6">
-              <button onClick={() => scrollTo('accueil')} className="text-stone-700 hover:text-amber-600 transition font-medium">Accueil</button>
-              <button onClick={() => scrollTo('services')} className="text-stone-700 hover:text-amber-600 transition font-medium">Services</button>
-              <button onClick={() => scrollTo('valeurs')} className="text-stone-700 hover:text-amber-600 transition font-medium">Nos Valeurs</button>
-              <button onClick={() => scrollTo('temoignages')} className="text-stone-700 hover:text-amber-600 transition font-medium">Témoignages</button>
-              <button onClick={() => scrollTo('contact')} className="px-4 py-2 bg-gradient-to-r from-amber-600 to-amber-700 text-white rounded-lg hover:shadow-lg transition">
+            <div className="hidden md:flex items-center gap-4 lg:gap-6">
+              <button onClick={() => scrollTo('accueil')} className="text-sm lg:text-base text-stone-700 hover:text-amber-600 transition font-medium">Accueil</button>
+              <button onClick={() => scrollTo('services')} className="text-sm lg:text-base text-stone-700 hover:text-amber-600 transition font-medium">Services</button>
+              <button onClick={() => scrollTo('valeurs')} className="text-sm lg:text-base text-stone-700 hover:text-amber-600 transition font-medium">Nos Valeurs</button>
+              <button onClick={() => scrollTo('temoignages')} className="text-sm lg:text-base text-stone-700 hover:text-amber-600 transition font-medium">Témoignages</button>
+              <button onClick={() => scrollTo('contact')} className="px-3 py-2 lg:px-4 text-sm lg:text-base bg-gradient-to-r from-amber-600 to-amber-700 text-white rounded-lg hover:shadow-lg transition">
                 Contact
               </button>
             </div>
 
-            <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden">
+            <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden flex-shrink-0">
               {menuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
@@ -167,32 +167,32 @@ export default function FermeIcosium() {
           </div>
 
           {/* Titre principal inspiré du slogan */}
-          <div className="mb-8 p-8 bg-amber-600/90 backdrop-blur rounded-3xl border-4 border-white shadow-2xl">
-            <h1 className="text-4xl md:text-6xl font-black text-white mb-4 leading-tight">
+          <div className="mb-8 p-6 sm:p-8 bg-amber-600/90 backdrop-blur rounded-3xl border-4 border-white shadow-2xl">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-black text-white mb-4 leading-tight">
               L'AVENTURE ÉQUESTRE<br />
-              <span className="text-5xl md:text-7xl">COMMENCE ICI</span>
+              <span className="text-4xl sm:text-5xl md:text-7xl">COMMENCE ICI</span>
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 font-semibold">
+            <p className="text-lg sm:text-xl md:text-2xl text-white/90 font-semibold">
               Ferme 70, Bouchaoui, Chéraga • Alger
             </p>
           </div>
 
-          <p className="text-xl md:text-2xl text-stone-700 mb-8 max-w-4xl mx-auto font-medium leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl text-stone-700 mb-8 max-w-4xl mx-auto font-medium leading-relaxed px-4">
             <span className="text-amber-700 font-bold">Bienvenue dans votre passion.</span><br />
             Plus qu'un centre équestre, une véritable ferme pédagogique où cavaliers et chevaux sont heureux.
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 px-4">
             <button 
               onClick={() => scrollTo('contact')}
-              className="px-8 py-4 bg-gradient-to-r from-stone-700 to-stone-800 text-white rounded-xl font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all"
+              className="px-6 sm:px-8 py-4 bg-gradient-to-r from-stone-700 to-stone-800 text-white rounded-xl font-bold text-base sm:text-lg hover:shadow-2xl hover:scale-105 transition-all"
             >
               Découvrir nos services 🐴
             </button>
             <button 
               onClick={openWhatsApp}
-              className="px-8 py-4 bg-green-500 text-white rounded-xl font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all flex items-center gap-2 justify-center"
+              className="px-6 sm:px-8 py-4 bg-green-500 text-white rounded-xl font-bold text-base sm:text-lg hover:shadow-2xl hover:scale-105 transition-all flex items-center gap-2 justify-center"
             >
               <MessageCircle size={24} />
               WhatsApp Direct
