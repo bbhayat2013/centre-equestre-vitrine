@@ -47,7 +47,7 @@ export default function Hero({ scrollTo, openWhatsApp }) {
           </button>
           <button 
             onClick={openWhatsApp}
-            className="px-4 sm:px-8 py-2.5 sm:py-4 bg-green-500 text-white rounded-lg sm:rounded-xl font-bold text-xs sm:text-lg hover:shadow-2xl hover:scale-105 transition-all flex items-center gap-1.5 sm:gap-2 justify-center whitespace-nowrap"
+            className="px-4 sm:px-8 py-2.5 sm:py-4 bg-[#25D366] hover:bg-[#1eb855] text-white rounded-lg sm:rounded-xl font-bold text-xs sm:text-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-all flex items-center gap-1.5 sm:gap-2 justify-center whitespace-nowrap border-2 border-white"
           >
             <MessageCircle size={16} className="sm:w-6 sm:h-6" />
             WhatsApp

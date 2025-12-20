@@ -58,6 +58,10 @@ export default function Navbar({ scrollTo }) {
             <button onClick={() => handleScroll('contact')} className="px-3 py-2 lg:px-4 text-sm lg:text-base bg-gradient-to-r from-amber-600 to-amber-700 text-white rounded-lg hover:shadow-lg transition whitespace-nowrap">
               Contact
             </button>
+            <button onClick={() => handleScroll('localisation')} className="text-sm lg:text-base text-stone-700 hover:text-amber-600 transition font-medium whitespace-nowrap">
+            Localisation
+            </button>
+
           </div>
 
           {/* Burger menu */}
@@ -88,6 +92,9 @@ export default function Navbar({ scrollTo }) {
             </button>
             <button onClick={() => handleScroll('contact')} className="block w-full text-left py-2 text-amber-600 font-semibold text-sm">
               Contact
+            </button>
+            <button onClick={() => handleScroll('localisation')} className="block w-full text-left py-2 text-stone-700 hover:text-amber-600 text-sm">
+            Localisation
             </button>
           </div>
         </div>
