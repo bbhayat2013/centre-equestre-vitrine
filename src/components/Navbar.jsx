@@ -11,52 +11,60 @@ export default function Navbar({ scrollTo }) {
 
   return (
     <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-md z-40 border-b-2 border-amber-600">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 sm:h-20">
-          
-          {/* ZONE LOGO + TEXTE */}
-          <div 
-            className="flex items-center gap-2 cursor-pointer min-w-0 flex-1" 
-            onClick={() => handleScroll('accueil')}
-          >
-            {/* L'icône reste fixe */}
-            <span className="text-2xl sm:text-4xl flex-shrink-0">🐴</span>
-            
-            {/* Le texte est protégé ici */}
+          {/* Logo et titre - Version mobile optimisée */}
+          <div className="flex items-center gap-2 cursor-pointer flex-shrink-0 min-w-0 max-w-[70%] sm:max-w-none" onClick={() => handleScroll('accueil')}>
+            <div className="text-2xl sm:text-4xl lg:text-5xl flex-shrink-0">🐴</div>
             <div className="min-w-0">
-              <h1 className="text-[13px] sm:text-lg lg:text-xl font-bold text-stone-800 leading-tight truncate">
-                Ferme Équestre Icosium
+              {/* Version mobile - texte très court */}
+              <h1 className="text-xs font-bold text-stone-800 block sm:hidden">
+                Ferme Icosium
               </h1>
-              <p className="text-[9px] text-stone-500 uppercase tracking-tighter sm:hidden">
-                Bouchaoui • Alger
-              </p>
-              <p className="text-xs text-stone-600 hidden sm:block">
-                المزرعة التربوية ونادي الفروسية إيكوزيوم
-              </p>
+              {/* Version tablette et plus */}
+              <h1 className="hidden sm:block text-base lg:text-xl font-bold text-stone-800">
+                Ferme & Club Équestre Icosium
+              </h1>
+              <p className="text-xs text-stone-600 hidden md:block">المزرعة التربوية ونادي الفروسية إيكوزيوم</p>
             </div>
           </div>
 
-          {/* MENU DESKTOP (Invisible sur A15) */}
-          <div className="hidden md:flex items-center gap-6">
-            <button onClick={() => handleScroll('services')} className="text-stone-700 hover:text-amber-600 font-medium">Services</button>
-            <button onClick={() => handleScroll('contact')} className="px-4 py-2 bg-amber-600 text-white rounded-lg font-bold">Contact</button>
+          {/* Menu desktop */}
+          <div className="hidden md:flex items-center gap-3 lg:gap-6">
+            <button onClick={() => handleScroll('accueil')} className="text-sm lg:text-base text-stone-700 hover:text-amber-600 transition font-medium">
+              Accueil
+            </button>
+            <button onClick={() => handleScroll('services')} className="text-sm lg:text-base text-stone-700 hover:text-amber-600 transition font-medium">
+              Services
+            </button>
+            <button onClick={() => handleScroll('valeurs')} className="text-sm lg:text-base text-stone-700 hover:text-amber-600 transition font-medium">
+              Valeurs
+            </button>
+            <button onClick={() => handleScroll('temoignages')} className="text-sm lg:text-base text-stone-700 hover:text-amber-600 transition font-medium">
+              Témoignages
+            </button>
+            <button onClick={() => handleScroll('contact')} className="px-3 py-2 lg:px-4 text-sm lg:text-base bg-gradient-to-r from-amber-600 to-amber-700 text-white rounded-lg hover:shadow-lg transition">
+              Contact
+            </button>
           </div>
 
-          {/* BOUTON BURGER (Prioritaire sur mobile) */}
-          <button 
-            onClick={() => setMenuOpen(!menuOpen)} 
-            className="md:hidden p-2 flex-shrink-0 ml-2"
-          >
+          {/* Burger menu */}
+          <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden flex-shrink-0 p-2">
             {menuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
 
-      {/* MENU MOBILE DÉROULANT */}
+      {/* Menu mobile */}
       {menuOpen && (
-        <div className="md:hidden bg-white border-t p-4 flex flex-col gap-4">
-          <button onClick={() => handleScroll('services')} className="text-left font-medium">Services</button>
-          <button onClick={() => handleScroll('contact')} className="text-left text-amber-600 font-bold">Contact</button>
+        <div className="md:hidden bg-white border-t">
+          <div className="px-4 py-2 space-y-1">
+            <button onClick={() => handleScroll('accueil')} className="block w-full text-left py-2 text-stone-700 hover:text-amber-600">Accueil</button>
+            <button onClick={() => handleScroll('services')} className="block w-full text-left py-2 text-stone-700 hover:text-amber-600">Services</button>
+            <button onClick={() => handleScroll('valeurs')} className="block w-full text-left py-2 text-stone-700 hover:text-amber-600">Nos Valeurs</button>
+            <button onClick={() => handleScroll('temoignages')} className="block w-full text-left py-2 text-stone-700 hover:text-amber-600">Témoignages</button>
+            <button onClick={() => handleScroll('contact')} className="block w-full text-left py-2 text-amber-600 font-semibold">Contact</button>
+          </div>
         </div>
       )}
     </nav>

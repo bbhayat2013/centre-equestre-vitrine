@@ -8,3 +8,4 @@ export default defineConfig({
     tailwindcss(), // <-- Activation du plugin
   ],
 })
+

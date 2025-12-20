@@ -73,3 +73,33 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+
+/*nouveau*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Prévenir le débordement horizontal */
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+  width: 100%;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Fix pour les très petits écrans */
+* {
+  min-width: 0;
+}
+
+/* Empêcher le zoom sur les inputs mobiles */
+@media (max-width: 768px) {
+  input, textarea, select {
+    font-size: 16px !important;
+  }
+}
